@@ -17,7 +17,7 @@ jobs:
         os: [ windows-latest, ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install Linux GUI dependencies
         if: matrix.os == 'ubuntu-latest'
         run: |
@@ -38,7 +38,7 @@ jobs:
           Compress-Archive -Path dist/* -DestinationPath "dist/OpenRecover-$tag-windows-x64.zip" -Force
       - name: Upload artifact (Windows)
         if: matrix.os == 'windows-latest'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: openrecover-windows-x64
           path: |
@@ -51,17 +51,18 @@ jobs:
     needs: test-and-build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: openrecover-windows-x64
           path: dist
       - name: Create or update GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
           TAG: ${{ github.ref_name }}
         run: |
-          if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" dist/* --clobber
+          if gh release view "$TAG" -R "$GH_REPO" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/* -R "$GH_REPO" --clobber
           else
-            gh release create "$TAG" dist/* --title "OpenRecover $TAG" --generate-notes
+            gh release create "$TAG" dist/* -R "$GH_REPO" --title "OpenRecover $TAG" --generate-notes
           fi

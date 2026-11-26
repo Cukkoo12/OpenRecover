@@ -12,18 +12,16 @@ Free, fast, open-source data recovery for **SSDs, HDDs, USB flash drives, SD/mic
 
 ---
 
-### Screenshots / Ekran Görüntüleri
-
-| Drive Selection / Kaynak Seçimi | Results & Live Preview / Sonuçlar & Canlı Önizleme |
-| :---: | :---: |
-| ![OpenRecover Home Screen](docs/screenshots/home.png) | ![OpenRecover Results & Preview](docs/screenshots/results.png) |
-
----
-
 ## Türkçe
 
 **Ücretsiz, sınırsız ve açık kaynak dosya kurtarma programı.**  
 500 MB sınırı, dosya sayısı kotası veya abonelik yok. Klasör ağacını koruyarak kurtarma, derin sektör taraması ve kurtarma öncesi canlı önizleme sunar.
+
+### Ekran Görüntüleri (Türkçe Arayüz)
+
+| Kaynak Seçimi | Sonuçlar & Canlı Önizleme |
+| :---: | :---: |
+| ![OpenRecover Türkçe Ana Ekran](docs/screenshots/home_tr.png) | ![OpenRecover Türkçe Sonuçlar ve Önizleme](docs/screenshots/results_tr.png) |
 
 ### İndirme (Kurulum Gerektirmez)
 - **[GitHub Releases (v0.1.0)](https://github.com/Cukkoo12/OpenRecover/releases/latest)** sayfasından tek başına çalışan **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~14.8 MB`) dosyasını veya `OpenRecover-v0.1.0-windows-x64.zip` paketini indirebilirsiniz.
@@ -75,6 +73,12 @@ openrecover-cli scan sdcard.img --mode combined --out D:\SD_Recovered
 
 **Zero paywalls. Zero 500 MB / 4,000-file limits.**  
 Full folder-tree reconstruction + sector-level signature carving + live preview before recovery — a free open-source alternative to paid data recovery tools.
+
+### Screenshots (English UI)
+
+| Drive Selection | Results & Live Preview |
+| :---: | :---: |
+| ![OpenRecover English Home Screen](docs/screenshots/home_en.png) | ![OpenRecover English Results & Preview](docs/screenshots/results_en.png) |
 
 ### Download (Portable, No Installer)
 - Grab the standalone **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~14.8 MB`) or the full archive from **[GitHub Releases](https://github.com/Cukkoo12/OpenRecover/releases/latest)**.

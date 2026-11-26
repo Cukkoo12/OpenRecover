@@ -1,16 +1,32 @@
 # OpenRecover
 
-**[Türkçe](#türkçe) · [English](#english)**
+[![Build & Release](https://github.com/Cukkoo12/OpenRecover/actions/workflows/release.yml/badge.svg)](https://github.com/Cukkoo12/OpenRecover/actions/workflows/release.yml)
+[![Latest Release](https://img.shields.io/github/v/release/Cukkoo12/OpenRecover?label=Release&color=ea580c)](https://github.com/Cukkoo12/OpenRecover/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-ea580c.svg)](LICENSE)
+[![Rust](https://img.shields.io/badge/Built%20with-Pure%20Rust-18181b.svg)](Cargo.toml)
 
-Free, fast, open-source data recovery for SSDs, HDDs, USB flash drives, SD/microSD cards, and disk images — built in Pure Rust (`eframe` / `egui`).  
-Ücretsiz, hızlı ve açık kaynak veri kurtarma aracı (SSD, HDD, USB bellek, SD/microSD kart ve disk imajları için).
+**[Türkçe](#türkçe) · [English](#english) · [Download Windows x64 (`openrecover.exe`)](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)**
+
+Free, fast, open-source data recovery for **SSDs, HDDs, USB flash drives, SD/microSD cards, and disk images** — a lightweight, zero-paywall open-source alternative to paid recovery software (built in Pure Rust with `eframe` / `egui`).  
+**SSD, HDD, USB bellek, SD/microSD kart ve disk imajları** için ücretsiz, kotasız ve açık kaynak veri/dosya kurtarma uygulaması.
+
+---
+
+### Screenshots / Ekran Görüntüleri
+
+| Drive Selection / Kaynak Seçimi | Results & Live Preview / Sonuçlar & Canlı Önizleme |
+| :---: | :---: |
+| ![OpenRecover Home Screen](docs/screenshots/home.png) | ![OpenRecover Results & Preview](docs/screenshots/results.png) |
 
 ---
 
 ## Türkçe
 
-**Ücretsiz, hafif ve açık kaynak dosya kurtarma aracı.**  
-Kota, 500 MB limiti veya ödeme duvarı yok. Tam klasör ağacı kurulumu, derin sektör taraması ve kurtarmadan önce canlı önizleme.
+**Ücretsiz, sınırsız ve açık kaynak dosya kurtarma programı.**  
+500 MB sınırı, dosya sayısı kotası veya abonelik yok. Klasör ağacını koruyarak kurtarma, derin sektör taraması ve kurtarma öncesi canlı önizleme sunar.
+
+### İndirme (Kurulum Gerektirmez)
+- **[GitHub Releases (v0.1.0)](https://github.com/Cukkoo12/OpenRecover/releases/latest)** sayfasından tek başına çalışan **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~14.8 MB`) dosyasını veya `OpenRecover-v0.1.0-windows-x64.zip` paketini indirebilirsiniz.
 
 ### Özellikler
 
@@ -58,7 +74,10 @@ openrecover-cli scan sdcard.img --mode combined --out D:\SD_Recovered
 ## English
 
 **Zero paywalls. Zero 500 MB / 4,000-file limits.**  
-Full folder-tree reconstruction + sector-level signature carving + live preview before recovery.
+Full folder-tree reconstruction + sector-level signature carving + live preview before recovery — a free open-source alternative to paid data recovery tools.
+
+### Download (Portable, No Installer)
+- Grab the standalone **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~14.8 MB`) or the full archive from **[GitHub Releases](https://github.com/Cukkoo12/OpenRecover/releases/latest)**.
 
 ### Features
 

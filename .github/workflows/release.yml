@@ -1,10 +1,14 @@
-name: Build & Test
+name: Build & Release
 
 on:
   push:
     branches: [ main, master ]
+    tags: [ 'v*' ]
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   test-and-build:
@@ -24,13 +28,40 @@ jobs:
         run: cargo test --locked --verbose
       - name: Build release binaries
         run: cargo build --release --locked
+      - name: Package Windows release archive
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          $tag = if ($env:GITHUB_REF_NAME -match '^v') { $env:GITHUB_REF_NAME } else { 'latest' }
+          New-Item -ItemType Directory -Force dist | Out-Null
+          Copy-Item target/release/openrecover.exe, target/release/openrecover-cli.exe, README.md, LICENSE dist/
+          Compress-Archive -Path dist/* -DestinationPath "dist/OpenRecover-$tag-windows-x64.zip" -Force
       - name: Upload artifact (Windows)
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
           name: openrecover-windows-x64
           path: |
-            target/release/openrecover.exe
-            target/release/openrecover-cli.exe
-            README.md
-            LICENSE
+            dist/openrecover.exe
+            dist/openrecover-cli.exe
+            dist/OpenRecover-*.zip
+
+  publish-release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: openrecover-windows-x64
+          path: dist
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+          else
+            gh release create "$TAG" dist/* --title "OpenRecover $TAG" --generate-notes
+          fi

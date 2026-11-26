@@ -1,0 +1,43 @@
+[package]
+name = "openrecover"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Fast, free, open-source file recovery for SSDs, HDDs, USB drives, SD cards, and disk images (NTFS, exFAT, FAT32, Deep Carving)."
+readme = "README.md"
+
+[lib]
+name = "openrecover"
+path = "src/lib.rs"
+
+[[bin]]
+name = "openrecover"
+path = "src/main.rs"
+
+[[bin]]
+name = "openrecover-cli"
+path = "src/bin/openrecover_cli.rs"
+
+[dependencies]
+eframe = "0.37.0"
+egui_extras = { version = "0.37.0", features = ["image"] }
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "gif", "bmp", "webp"] }
+rfd = "0.18.0"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61.2", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_IO",
+    "Win32_System_Ioctl",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true

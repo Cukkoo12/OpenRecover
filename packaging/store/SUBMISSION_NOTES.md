@@ -68,7 +68,7 @@ Key capabilities:
 - Deep Sector Carving for JPG, PNG, GIF, BMP, WEBP, MP4/MOV, WAV, AVI, PDF, ZIP/DOCX/XLSX, and SQLite
 - Live pre-recovery preview (images, UTF-8 text, hex dump)
 - Built-in same-drive write lock preventing overwriting the scanned source drive
-- Full CLI included (`openrecover-cli.exe` via Windows App Execution Alias)
+- Full CLI included (`openrecover-cli.exe` in install folder / GitHub Releases)
 - Bilingual interface: English & Turkish (`EN | TR`)
 
 #### Türkçe (`tr-TR`)
@@ -93,7 +93,7 @@ OpenRecover; tamamen Pure Rust ile geliştirilmiş, %100 çevrimdışı çalış
 
 When Partner Center displays the **Restricted capability (`runFullTrust`)** prompt on **Submission options**, paste this explanation:
 
-> OpenRecover is a classic Win32 desktop data recovery utility packaged via MSIX (`openrecover.exe` GUI and `openrecover-cli.exe` console alias). It declares `runFullTrust` solely to perform local, read-only filesystem and disk-image recovery operations and save restored files to user-chosen destination folders outside the app container. The application launches as a standard user with zero network activity (`internetClient` is not declared) and collects no user data. Disk image files (`.img`, `.dd`, `.raw`, `.bin`) can be scanned immediately without elevation; only reading live system/USB block devices on Windows prompts standard on-demand UAC elevation when explicitly initiated by the user.
+> OpenRecover is a classic Win32 desktop data recovery utility packaged via MSIX (`openrecover.exe`). It declares `runFullTrust` solely to perform local, read-only filesystem and disk-image recovery operations and save restored files to user-chosen destination folders outside the app container. The application launches as a standard user with zero network activity (`internetClient` is not declared) and collects no user data. Disk image files (`.img`, `.dd`, `.raw`, `.bin`) can be scanned immediately without elevation; only reading live system/USB block devices on Windows requires standard Windows Administrator privileges when initiated by the user.
 
 ### Notes for Certification (Testers)
-> OpenRecover runs 100% offline with no sign-in required. To test immediately without Administrator privileges, click **"Open Disk Image..."** in the top bar and select any `.img`, `.dd`, `.raw`, or `.bin` disk image file (or pass an image path to `openrecover-cli scan <image.img> --mode combined --out <dest>`). Standard-user live physical drive recovery requires Windows Administrator privileges for raw volume read access (`\\.\X:`), which the user triggers manually via the **"Run as Administrator"** button.
+> OpenRecover runs 100% offline with no sign-in required. To test immediately without Administrator privileges, click **"Open Image"** in the top bar (or **"+ Select Disk Image (.img / .dd / .raw)"** on the home screen) and select any `.img`, `.dd`, `.raw`, or `.bin` disk image file (or launch `openrecover.exe path\to\image.img --scan`). Live physical drive recovery requires Windows Administrator privileges for raw volume read access (`\\.\X:`), which users can run via **"Run as Admin"** or Start Menu → **Run as administrator**.

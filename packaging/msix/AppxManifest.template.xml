@@ -3,9 +3,8 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
-  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap uap5 desktop4 rescap">
+  IgnorableNamespaces="uap uap5 rescap">
 
   <Identity
     Name="__IDENTITY_NAME__"
@@ -57,31 +56,6 @@
           EntryPoint="Windows.FullTrustApplication">
           <uap5:AppExecutionAlias>
             <uap5:ExecutionAlias Alias="openrecover.exe" />
-          </uap5:AppExecutionAlias>
-        </uap5:Extension>
-      </Extensions>
-    </Application>
-
-    <Application
-      Id="OpenRecoverCli"
-      Executable="openrecover-cli.exe"
-      EntryPoint="Windows.FullTrustApplication"
-      desktop4:Subsystem="console"
-      desktop4:SupportsMultipleInstances="true">
-      <uap:VisualElements
-        DisplayName="OpenRecover CLI"
-        Description="OpenRecover command-line disk and image recovery utility."
-        BackgroundColor="transparent"
-        Square150x150Logo="Assets\Square150x150Logo.png"
-        Square44x44Logo="Assets\Square44x44Logo.png"
-        AppListEntry="none" />
-      <Extensions>
-        <uap5:Extension
-          Category="windows.appExecutionAlias"
-          Executable="openrecover-cli.exe"
-          EntryPoint="Windows.FullTrustApplication">
-          <uap5:AppExecutionAlias desktop4:Subsystem="console">
-            <uap5:ExecutionAlias Alias="openrecover-cli.exe" />
           </uap5:AppExecutionAlias>
         </uap5:Extension>
       </Extensions>

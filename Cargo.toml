@@ -1,6 +1,6 @@
 [package]
 name = "openrecover"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "Fast, free, open-source file recovery for SSDs, HDDs, USB drives, SD cards, and disk images (NTFS, exFAT, FAT32, Deep Carving)."

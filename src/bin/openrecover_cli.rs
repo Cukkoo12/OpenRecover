@@ -10,7 +10,7 @@ use openrecover::core::run_scan;
 use openrecover::core::types::{format_bytes, RecoverEvent, ScanEvent, ScanMode};
 
 fn print_usage() {
-    println!("OpenRecover CLI v0.1.0");
+    println!("OpenRecover CLI v{}", env!("CARGO_PKG_VERSION"));
     println!("Usage:");
     println!("  openrecover-cli list");
     println!("  openrecover-cli scan <source> [--mode quick|carve|combined] [--filter <substr>] [--out <dest_dir>]");

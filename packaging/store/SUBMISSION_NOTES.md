@@ -25,10 +25,10 @@ Run from the repository root (`D:\Ai\OpenRecover`) substituting your Partner Cen
     -IdentityName "<Package/Identity/Name>" `
     -Publisher "<CN=...>" `
     -PublisherDisplayName "<PublisherDisplayName>" `
-    -Version "0.1.0.0"
+    -Version "0.1.1.0"
 ```
 
-Output: `dist\OpenRecover-0.1.0.0-x64.msix` (**unsigned**, as required — Microsoft signs Store packages with Microsoft's Store certificate automatically after certification).
+Output: `dist\OpenRecover-0.1.1.0-x64.msix` (**unsigned**, as required — Microsoft signs Store packages with Microsoft's Store certificate automatically after certification).
 
 > Note: Microsoft Store requires the 4th version segment (revision) to stay `0` (e.g., `0.1.0.0`, `0.2.0.0`).
 

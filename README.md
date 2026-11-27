@@ -25,7 +25,7 @@ Free, fast, open-source data recovery for **SSDs, HDDs, USB flash drives, SD/mic
 | ![OpenRecover Türkçe Ana Ekran](docs/screenshots/home_tr.png) | ![OpenRecover Türkçe Sonuçlar ve Önizleme](docs/screenshots/results_tr.png) |
 
 ### İndirme (Kurulum Gerektirmez)
-- **[GitHub Releases (v0.1.0)](https://github.com/Cukkoo12/OpenRecover/releases/latest)** sayfasından tek başına çalışan **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~14.8 MB`) dosyasını veya `OpenRecover-v0.1.0-windows-x64.zip` paketini indirebilirsiniz.
+- **[GitHub Releases (v0.1.1)](https://github.com/Cukkoo12/OpenRecover/releases/latest)** sayfasından tek başına çalışan **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~15.0 MB`) dosyasını veya `OpenRecover-v0.1.1-windows-x64.zip` paketini indirebilirsiniz.
 
 ### Özellikler
 
@@ -82,7 +82,7 @@ Full folder-tree reconstruction + sector-level signature carving + live preview 
 | ![OpenRecover English Home Screen](docs/screenshots/home_en.png) | ![OpenRecover English Results & Preview](docs/screenshots/results_en.png) |
 
 ### Download (Portable, No Installer)
-- Grab the standalone **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~14.8 MB`) or the full archive from **[GitHub Releases](https://github.com/Cukkoo12/OpenRecover/releases/latest)**.
+- Grab the standalone **[openrecover.exe](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)** (`~15.0 MB`) or the full archive from **[GitHub Releases](https://github.com/Cukkoo12/OpenRecover/releases/latest)**.
 
 ### Features
 

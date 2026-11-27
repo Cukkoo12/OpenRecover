@@ -9,7 +9,7 @@ or optionally self-signed for local sideload verification).
     -IdentityName "<YourPartnerCenterPackageIdentityName>" `
     -Publisher "CN=<YourPartnerCenterPublisherId>" `
     -PublisherDisplayName "<YourPublisherDisplayName>" `
-    -Version "0.1.0.0"
+    -Version "0.1.1.0"
 
 .EXAMPLE
 # Self-signed local test build:
@@ -20,7 +20,7 @@ param(
     [string]$IdentityName = "OpenRecover.OpenRecover.Dev",
     [string]$Publisher = "CN=OpenRecoverDev",
     [string]$PublisherDisplayName = "OpenRecover Contributors",
-    [string]$Version = "0.1.0.0",
+    [string]$Version = "0.1.1.0",
     [switch]$IncludeDonateButton,
     [switch]$DynamicCrt,
     [switch]$SkipBuild,

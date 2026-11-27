@@ -21,6 +21,7 @@ param(
     [string]$Publisher = "CN=OpenRecoverDev",
     [string]$PublisherDisplayName = "OpenRecover Contributors",
     [string]$Version = "0.1.0.0",
+    [switch]$IncludeDonateButton,
     [switch]$DynamicCrt,
     [switch]$SkipBuild,
     [switch]$SignSelfSigned
@@ -71,8 +72,12 @@ try {
             } else {
                 Write-Host "Building release binaries with dynamic CRT..."
             }
-            cargo build --release --locked
-            if ($LASTEXITCODE -ne 0) { throw "cargo build --release --locked failed." }
+            $cargoArgs = @("build", "--release", "--locked")
+            if (-not $IncludeDonateButton) {
+                $cargoArgs += "--no-default-features"
+            }
+            & cargo @cargoArgs
+            if ($LASTEXITCODE -ne 0) { throw "cargo build failed." }
         } finally {
             $env:RUSTFLAGS = $prevRustFlags
         }

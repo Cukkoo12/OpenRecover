@@ -17,6 +17,20 @@ impl Lang {
         if self.is_tr() { "Yönetici Olarak Aç" } else { "Run as Admin" }
     }
 
+    #[cfg(feature = "donate-link")]
+    pub fn btn_support(self) -> &'static str {
+        if self.is_tr() { "♥ Destek Ol" } else { "♥ Support" }
+    }
+
+    #[cfg(feature = "donate-link")]
+    pub fn support_tooltip(self) -> &'static str {
+        if self.is_tr() {
+            "Buy Me a Coffee üzerinden OpenRecover'a destek olun (buymeacoffee.com/Cukkoo)"
+        } else {
+            "Support OpenRecover on Buy Me a Coffee (buymeacoffee.com/Cukkoo)"
+        }
+    }
+
     pub fn btn_refresh(self) -> &'static str {
         if self.is_tr() { "Yenile" } else { "Refresh" }
     }

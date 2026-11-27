@@ -46,6 +46,7 @@ Output: `dist\OpenRecover-0.1.0.0-x64.msix` (**unsigned**, as required — Micro
   `https://github.com/Cukkoo12/OpenRecover/issues`
 - **License Terms:**  
   `https://github.com/Cukkoo12/OpenRecover/blob/main/LICENSE`
+- **External Donation Policy Note:** `build_msix.ps1` compiles Microsoft Store MSIX packages with `--no-default-features` so external Buy Me a Coffee links remain on GitHub rather than inside Store binaries (preventing Policy 10.8 issues). Pass `-IncludeDonateButton` only if you want it compiled into the MSIX UI too.
 - **Store Logo (300x300 PNG):**  
   Upload `packaging/store/StoreLogo_300x300.png`
 - **Desktop Screenshots (1493x972 PNG, satisfies >= 1366x768 minimum):**

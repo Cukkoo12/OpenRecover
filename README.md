@@ -4,6 +4,7 @@
 [![Latest Release](https://img.shields.io/github/v/release/Cukkoo12/OpenRecover?label=Release&color=ea580c)](https://github.com/Cukkoo12/OpenRecover/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-ea580c.svg)](LICENSE)
 [![Rust](https://img.shields.io/badge/Built%20with-Pure%20Rust-18181b.svg)](Cargo.toml)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Cukkoo-ea580c?logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/Cukkoo)
 
 **[Türkçe](#türkçe) · [English](#english) · [Download Windows x64 (`openrecover.exe`)](https://github.com/Cukkoo12/OpenRecover/releases/latest/download/openrecover.exe)**
 
@@ -120,6 +121,15 @@ openrecover-cli scan C: --mode quick --filter AppData/Roaming --out D:\Restored
 # Combined tree + deep carving on an SD card disk image
 openrecover-cli scan sdcard.img --mode combined --out D:\SD_Recovered
 ```
+
+---
+
+## Support / Destek
+
+OpenRecover is 100% free with no paywalls or quotas. If it helped you recover important files, you can optionally support the project:  
+OpenRecover tamamen ücretsiz ve kotasızdır. Önemli dosyalarınızı kurtarmanıza yardımcı olduysa projeye destek olabilirsiniz:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Cukkoo-ea580c?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/Cukkoo)
 
 ---
 

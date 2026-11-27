@@ -21,7 +21,7 @@ OpenRecover is an open-source, 100% offline data recovery utility for Windows, L
 - **Administrative privileges (Windows):** Reading raw local volumes (`C:`, `D:`, USB/SD block devices) on Windows requires local Administrator privileges granted through standard Windows UAC only when requested by the user. Disk image files can be scanned without Administrator privileges.
 
 ### 3. Third-Party Services
-OpenRecover does not integrate with any third-party analytics, cloud storage, or advertising providers. Links to GitHub (`github.com/Cukkoo12/OpenRecover`) are external documentation/source-code links opened only if the user chooses to visit them.
+OpenRecover does not integrate with any third-party analytics, cloud storage, or advertising providers. External links (such as GitHub `github.com/Cukkoo12/OpenRecover` or optional support link `buymeacoffee.com/Cukkoo` in standalone builds) are opened in your web browser only if you explicitly choose to click them.
 
 ### 4. Contact
 For privacy questions or security reports, please open an issue at:  

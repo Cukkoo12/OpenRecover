@@ -37,6 +37,9 @@ const TEXT_PRI: Color32 = Color32::from_rgb(24, 24, 27);
 const TEXT_SEC: Color32 = Color32::from_rgb(82, 82, 91);
 const TEXT_MUTED: Color32 = Color32::from_rgb(132, 132, 143);
 
+#[cfg(feature = "donate-link")]
+const BUY_ME_A_COFFEE_URL: &str = "https://buymeacoffee.com/Cukkoo";
+
 enum PreviewData {
     None,
     Image {
@@ -775,6 +778,29 @@ impl OpenRecoverApp {
                             if self.show_home && subtle_button(ui, self.lang.btn_refresh()).clicked()
                             {
                                 self.refresh_devices();
+                            }
+                        }
+
+                        #[cfg(feature = "donate-link")]
+                        {
+                            let support_resp = ui
+                                .add(
+                                    egui::Button::new(
+                                        RichText::new(self.lang.btn_support())
+                                            .size(12.0)
+                                            .strong()
+                                            .color(ACCENT),
+                                    )
+                                    .fill(ACCENT_SOFT)
+                                    .stroke(Stroke::new(1.0, ACCENT_BORDER))
+                                    .corner_radius(8.0),
+                                )
+                                .on_hover_text(self.lang.support_tooltip());
+                            if support_resp.hovered() {
+                                ctx.set_cursor_icon(egui::CursorIcon::PointingHand);
+                            }
+                            if support_resp.clicked() {
+                                ctx.open_url(egui::OpenUrl::new_tab(BUY_ME_A_COFFEE_URL));
                             }
                         }
                     });

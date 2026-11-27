@@ -209,6 +209,14 @@ impl Lang {
         }
     }
 
+    pub fn admin_elevate_hint(self) -> &'static str {
+        if self.is_tr() {
+            "Yönetici yükseltmesi başlatılamadı. Başlat menüsünden OpenRecover'a sağ tıklayıp 'Yönetici olarak çalıştır' seçin veya Yönetici terminalinden 'openrecover' yazın."
+        } else {
+            "Direct elevation could not start. Right-click OpenRecover in Start Menu -> Run as administrator, or launch 'openrecover' from an Admin terminal."
+        }
+    }
+
     pub fn btn_open_dest(self) -> &'static str {
         if self.is_tr() { "Klasörü Aç" } else { "Open Folder" }
     }

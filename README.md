@@ -123,6 +123,7 @@ openrecover-cli scan sdcard.img --mode combined --out D:\SD_Recovered
 
 ---
 
-## License / Lisans
+## License & Privacy / Lisans & Gizlilik
 
-[MIT](LICENSE)
+- [MIT License](LICENSE)
+- [Privacy Policy / Gizlilik Politikası](PRIVACY.md) (100% offline, zero telemetry)

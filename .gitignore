@@ -1,4 +1,10 @@
 /target
+/dist
+*.msix
+*.msixbundle
+*.pfx
+*.cer
+*.pri
 **/*.rs.bk
 *.pdb
 .DS_Store

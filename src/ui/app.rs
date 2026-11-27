@@ -55,6 +55,7 @@ enum PreviewData {
 pub struct OpenRecoverApp {
     lang: Lang,
     is_admin: bool,
+    elevate_failed: bool,
     show_home: bool,
     show_folder_tree: bool,
     pending_auto_scan: bool,
@@ -149,6 +150,7 @@ impl OpenRecoverApp {
         Self {
             lang: initial_lang,
             is_admin: is_elevated(),
+            elevate_failed: false,
             show_home: true,
             show_folder_tree: true,
             pending_auto_scan,
@@ -758,6 +760,11 @@ impl OpenRecoverApp {
                         {
                             if relaunch_as_admin().is_ok() {
                                 ctx.send_viewport_cmd(egui::ViewportCommand::Close);
+                            } else {
+                                self.elevate_failed = true;
+                                if !self.scanning && self.entries.is_empty() {
+                                    self.show_home = true;
+                                }
                             }
                         }
 
@@ -809,9 +816,14 @@ impl OpenRecoverApp {
                                 .inner_margin(egui::Margin::symmetric(14, 9))
                                 .show(ui, |ui| {
                                     ui.set_width((banner_outer - 28.0).max(120.0));
-                                    ui.horizontal(|ui| {
+                                    let hint_text = if self.elevate_failed {
+                                        self.lang.admin_elevate_hint()
+                                    } else {
+                                        self.lang.admin_hint()
+                                    };
+                                    ui.horizontal_wrapped(|ui| {
                                         ui.label(
-                                            RichText::new(self.lang.admin_hint())
+                                            RichText::new(hint_text)
                                                 .size(12.0)
                                                 .color(AMBER),
                                         );
